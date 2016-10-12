@@ -9,11 +9,12 @@ function handleRequest(request, response) {
 
     var query = request.url.split('&')[8].replace(/\+/g, ' ');
 
+    console.log("attempting to translate", query);
     gt.translate(query, 'en', 'es', (err, translation) => {
 
         if(err) {
 
-            console.log("couldn't translate");
+            console.log("couldn't translate", err);
             return;
         }
 
