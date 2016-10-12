@@ -7,6 +7,9 @@ const PORT = 80;
 function handleRequest(request, response) {
 
     response.end("it worked" + request.url);
+    console.log(request);
+    console.log(request.url);
+
 }
 
 var server = http.createServer(handleRequest);
