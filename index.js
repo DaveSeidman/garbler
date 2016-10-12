@@ -4,7 +4,7 @@ var apiKey = require('./private/apikey.json'),
 
 const PORT = 80;
 
-function handleRequest(request, responst) {
+function handleRequest(request, response) {
 
     response.end("it worked" + request.url);
 }
