@@ -8,7 +8,17 @@ const PORT = 80;
 function handleRequest(request, response) {
 
     var query = request.url.split('&')[8].replace(/\+/g, ' ');
-    response.end("you said" + query);
+
+    gt.translate(query, 'en', 'es', (err, translation) => {
+
+        if(err) {
+
+            console.log("couldn't translate");
+            return;
+        }
+
+        response.end(translation.translatedText);
+    });
 }
 
 var server = http.createServer(handleRequest);
