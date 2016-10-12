@@ -6,8 +6,10 @@ const PORT = 80;
 
 function handleRequest(request, response) {
 
-    response.end("it worked" + request.url);
-    console.log(request.url);
+
+
+    response.end("you said" + request.url.substring());
+    console.log(request.url.split('&'));
 
 }
 
