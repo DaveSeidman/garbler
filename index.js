@@ -1,4 +1,4 @@
-var apiKey = require('./.private/apikey.json'),
+var apiKey = require('./private/apikey.json'),
     gt = require('google-translate')(apiKey.key);
 
 
