@@ -9,7 +9,7 @@ function handleRequest(request, response) {
 
 
     response.end("you said" + request.url.substring());
-    console.log(request.url.split('&'));
+    console.log(request.url.split('&')[8]);
 
 }
 
