@@ -8,7 +8,7 @@ const PORT = 80;
 function handleRequest(request, response) {
 
     var query = request.url.split('&')[8].replace(/\+/g, ' ');
-    response.end("you said", query);
+    response.end("you said" + query);
 }
 
 var server = http.createServer(handleRequest);
