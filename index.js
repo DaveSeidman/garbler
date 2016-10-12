@@ -1,16 +1,14 @@
 var apiKey = require('./private/apikey.json'),
     gt = require('google-translate')(apiKey.key),
-    http = require('http');
+    http = require('http'),
+    querystring = require('querystring');
 
 const PORT = 80;
 
 function handleRequest(request, response) {
 
-
-
-    response.end("you said" + request.url.substring());
-    console.log(request.url.split('&')[8]);
-
+    var query = request.url.split('&')[8].replace(/\+/g, ' ');
+    response.end("you said", query);
 }
 
 var server = http.createServer(handleRequest);
